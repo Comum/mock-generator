@@ -1,0 +1,53 @@
+{
+    "title": "Event Page Tabs Grids",
+    "type": "object",
+    "properties": {
+        "byId": {
+            "type": "object",
+            "properties": {
+                "eventPageTabsGridID": {
+                    "type": "object",
+                    "properties": {
+                        "id": { "type": "string" },
+                        "title": { "type": "string" },
+                        "blurb": { "type": "string" },
+                        "isExpanded": { "type": "boolean" },
+                        "visibleLinesNumber": { "type": "number" },
+                        "template": { "type": "string" },
+                        "tabs": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "title": { "type": "string" },
+                                    "blurb": { "type": "string" },
+                                    "handicapTypeLabel": { "type": "string" },
+                                    "headerLabels": {
+                                        "type": "array",
+                                        "uniqueItems": true,
+                                        "items": { "type": "string" }
+                                    },
+                                    "marketTypeConfigs": {
+                                        "type": "array",
+                                        "uniqueItems": true,
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "marketType": { "type": "string" },
+                                                "blurb": { "type": "string" }
+                                            }
+                                        }
+                                    },
+                                    "marketIds": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
+                                }
+                            }
+                        }
+                    },
+                    "required": ["id", "title", "eventPageTabGridIds"]
+                }
+            }
+        },
+        "allIds": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
+    }
+}

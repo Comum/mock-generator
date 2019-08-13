@@ -1,0 +1,36 @@
+{
+    "title": "Events",
+    "type": "object",
+    "properties": {
+        "byId": {
+            "type": "object",
+            "properties": {
+                "eventId": {
+                    "type": "object",
+                    "properties": {
+                        "id": { "type": "number" },
+                        "eventTypeId": { "type": "number" },
+                        "title": { "type": "text" },
+                        "videoAvailable": { "type": "boolean" },
+                        "openDate": { "type": "date" },
+                        "eventPageTabIds": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": ["id", "eventTypeId", "title", "videoAvailable", "openDate", "eventPageTabIds"]
+                }
+            }
+        },
+        "allIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}
