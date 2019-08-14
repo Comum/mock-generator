@@ -16,7 +16,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/form-response', (req, res) => {
-    res.send(`test: ${req.body.test}`);
+    res.send(req.body);
+});
+app.get('/form-response', (req, res) => {
+    res.redirect('/');
 });
 
 app.get('/schemas', (req, res) => {
