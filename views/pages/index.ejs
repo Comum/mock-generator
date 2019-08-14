@@ -4,14 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>SMX - Mock Generator</title>
+        <link rel="stylesheet" href="styles/main.css">
     </head>
     <body>
         <h1>Mock Generator</h1>
-        <form action="/form-response" method="POST">
+        <form action="/form-response" method="POST" class="main-form">
             <div class="container">
                 <%- include('../partials/event-page-partials/event-fields.ejs'); %>
             </div>
-            <input type="text" name="test"></form>
+            <input type="text" name="test">
             <input type="submit">
         </form>
         
