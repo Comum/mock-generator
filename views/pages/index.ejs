@@ -8,8 +8,12 @@
     <body>
         <h1>Mock Generator</h1>
         <form action="/form-response" method="POST">
-        <input type="text" name="test"></form>
-        <input type="submit">
+            <div class="container">
+                <%- include('../partials/event-page-partials/event-fields.ejs'); %>
+            </div>
+            <input type="text" name="test"></form>
+            <input type="submit">
+        </form>
         
         <div id="destiny">
             <%- include('../partials/destiny.ejs'); %>
