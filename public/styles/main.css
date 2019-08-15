@@ -9,6 +9,7 @@ body {
 
 .main-form {
     margin: 15px 0;
+    padding: 0 10px;
 }
 
 .form-field-title {
@@ -17,7 +18,6 @@ body {
 
 .form-fields-container {
     margin-bottom: 5px;
-    margin-left: 10px;
 
     display: flex;
     flex-direction: column;
@@ -28,14 +28,44 @@ body {
 
     margin-left: 10px;
     margin-bottom: 10px;
-
     padding-bottom: 5px;
 
     border-bottom: 1px solid grey;
+
+    display: flex;
 }
 
 .form-field-label {
     width: 150px;
 
     display: inline-block;
+}
+
+.form-field-number-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-field-number-button {
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid black;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.form-field-number-input {
+    width: 40px;
+
+    margin: 0 10px;
+
+    -webkit-appearance: none; 
+    text-align: center;
 }
