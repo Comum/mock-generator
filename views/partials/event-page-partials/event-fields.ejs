@@ -1,11 +1,11 @@
 <div class="form-fields-container">
     <h3 class="form-field-title">Event</h3>
     <div class="form-field-row">
-        <label for="eventName" class="form-field-label">Event Name: </label>
-        <input type="text" name="eventName" id="eventName" />
+        <label for="eventName_<%= eventId  %>" class="form-field-label">Event Name: </label>
+        <input type="text" name="eventName_<%= eventId  %>" id="eventName_<%= eventId  %>" />
     </div>
     <div class="form-field-row">
-        <label for="numberOfTabs" class="form-field-label">Number of tabs: </label>
-        <input type="number" name="numberOfTabs" id="numberOfTabs" />
+        <label for="eventNumberOfTabs_<%= eventId  %>" class="form-field-label">Number of tabs: </label>
+        <input type="number" name="eventNumberOfTabs_<%= eventId  %>" id="eventNumberOfTabs_<%= eventId  %>" />
     </div>
 </div>

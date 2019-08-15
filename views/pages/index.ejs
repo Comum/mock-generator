@@ -10,7 +10,10 @@
         <h1>Mock Generator</h1>
         <form action="/form-response" method="POST" class="main-form">
             <div class="container">
-                <%- include('../partials/event-page-partials/event-fields.ejs'); %>
+                <%- include('../partials/event-page-partials/competition-fields.ejs'); %>
+            </div>
+            <div class="container">
+                <%- include('../partials/event-page-partials/event-fields.ejs', {eventId: 1}); %>
             </div>
             <input type="text" name="test">
             <input type="submit">
