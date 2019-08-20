@@ -7,15 +7,26 @@
     <div class="form-field-row">
         <label for="numberOfEvents" class="form-field-label">Number of events: </label>
         <div class="form-field-number-container">
-            <div class="form-field-number-button" data-target="numberOfEvents" data-action="decrement">-</div>
+            <div
+                class="form-field-number-button"
+                data-target="numberOfEvents"
+                data-action="decrement"
+                data-component="competition"
+            >-</div>
             <input
                 type="number"
                 name="numberOfEvents"
                 value="<%= defaultNrOfEvents %>"
                 id="numberOfEvents"
                 class="form-field-number-input"
+                min="1"
             />
-            <div class="form-field-number-button" data-target="numberOfEvents" data-action="increment">+</div>
+            <div
+                class="form-field-number-button"
+                data-target="numberOfEvents"
+                data-action="increment"
+                data-component="competition"
+            >+</div>
         </div>
     </div>
 </div>

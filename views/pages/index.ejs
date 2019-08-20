@@ -12,12 +12,13 @@
             <div class="container">
                 <%- include('../partials/event-page-partials/competition-fields.ejs', { defaultNrOfEvents: 1}); %>
             </div>
-            <div class="container">
+            <div id="events-container">
                 <%- include('../partials/event-page-partials/event-fields.ejs', {eventId: 1}); %>
             </div>
             <input type="submit" value="Generate mock">
         </form>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ejs@2.6.2/ejs.min.js"></script>
         <script src="scripts/main.js"></script>
     </body>
 </html>
