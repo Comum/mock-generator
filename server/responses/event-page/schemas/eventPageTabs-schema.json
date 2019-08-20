@@ -1,0 +1,36 @@
+{
+    "title": "Event Page Tabs",
+    "type": "object",
+    "properties": {
+        "byId": {
+            "type": "object",
+            "properties": {
+                "eventPageTabID": {
+                    "type": "object",
+                    "properties": {
+                        "id": { "type": "string" },
+                        "badge": { "type": "string" },
+                        "title": { "type": "string" },
+                        "isDefaultTab": { "type": "boolean" },
+                        "isAllMarketsTab": { "type": "boolean" },
+                        "eventPageTabGridIds": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": ["id", "title", "eventPageTabGridIds"]
+                }
+            }
+        },
+        "allIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}
