@@ -47,7 +47,7 @@ const getAllSchemasInFolders = (folders) => {
         folders.forEach((folder, index) => {
             let files = [];
             
-            getFilesInFolder("./src/responses/" + folder + "/schemas")
+            getFilesInFolder("./responses/" + folder + "/schemas")
                 .then((response) => {
                     response.forEach((file) => {
                         files.push(file.split('.json')[0]);
@@ -63,7 +63,7 @@ const getAllSchemasInFolders = (folders) => {
                     }
                 })
                 .catch((err) => {
-                    console.log('Error: ', err);
+                    reject();
                 });
         });
     });
