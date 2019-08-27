@@ -1,11 +1,9 @@
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
-const fs = require("fs");
 const path = require("path");
+const dirTree = require("directory-tree");
 const app = express();
-
-const { fetchDirectories, getLastFolder, getAllSchemasInFolders } = require("./lib/utils/file-utils");
 
 app.set("view engine", "ejs");
 
@@ -13,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cors());
 
+// CHANGE/REMOVE THIS ROUTE
 app.get("/", (req, res) => {
     const testResponse = {
         hello: 'world'
@@ -20,17 +19,11 @@ app.get("/", (req, res) => {
 
     res.send(testResponse);
 });
-app.get("/supported-requests", (req, res) => {
-    const fullDirectories = fetchDirectories(path.join(__dirname + "/responses/"));
-    const folders = getLastFolder(fullDirectories);
 
-    getAllSchemasInFolders(folders)
-        .then((response) => {
-            res.send(response);
-        })
-        .catch((err) => {
-            res.send({ error: true });
-        });
+app.get("/supported-requests", (req, res) => {
+    const tree = dirTree(path.join(__dirname + "/responses/"));
+
+    res.send(tree);
 });
 
 app.listen(8000, () => {
