@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const path = "http://localhost:8000/";
+const path = "http://localhost:8000/supported-requests";
 
 function App() {
-    const [data, setData] = useState({ hello: '' });
+    const [folders, setFolders] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(path);
 
             console.log(result);
-            setData(result.data);
+            setFolders(result.data);
         };
         fetchData();
     }, []);
 
     return (
-        <div>Hello {data.hello}</div>
+        <div>
+            <h2>Mock generator</h2>
+            <div>
+                <h3>Pick your mock</h3>
+                <div>{folders.children && folders.children[0].name}</div>
+            </div>
+            <div>
+                <h3>Mock area</h3>
+            </div>
+        </div>
     );
 }
 
