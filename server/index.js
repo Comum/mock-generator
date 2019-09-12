@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
+const fs = require("fs");
 const path = require("path");
 const dirTree = require("directory-tree");
 const app = express();
@@ -14,7 +15,7 @@ app.use(cors());
 // CHANGE/REMOVE THIS ROUTE
 app.get("/", (req, res) => {
     const testResponse = {
-        hello: 'world'
+        route: "root"
     };
 
     res.send(testResponse);
@@ -24,6 +25,27 @@ app.get("/supported-requests", (req, res) => {
     const tree = dirTree(path.join(__dirname + "/responses/"));
 
     res.send(tree);
+});
+
+app.get("/schemas-json/:folder?/:file?", function(req, res) {
+    if (req.params.folder && req.params.file) {
+        let response = {};
+
+        try {
+            rawData = fs.readFileSync(
+                path.join(__dirname + "/responses/" + req.params.folder + "/schemas/" + req.params.file + ".json")
+            );
+            response = JSON.parse(rawData);
+        } catch(e) {
+            response.err = "Schema not found";
+        } finally {
+            res.send(response);
+        }
+    } else {
+        res.send({
+            err: "Please provide a valid url: /schemas-json/:folder/:file"
+        });
+    }
 });
 
 app.listen(8000, () => {
