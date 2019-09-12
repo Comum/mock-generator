@@ -16,18 +16,29 @@ const getMocks = (folders) => {
     return mocks;
 };
 
-const getMockButtons = (mocks) => {
+const getMockButtons = (mocks, onClickCallback) => {
     if (!mocks.length) {
-        return (<div>No mocks available</div>);
+        return <div>No mocks available</div>;
     }
 
-    return mocks.map((mock, index) => { 
-        return (<div key={index}>{mock}</div>);
+    return mocks.map((mock, index) => {
+        return (
+            <div
+                key={index}
+                onClick={() => {
+                    onClickCallback(mock);
+                }}
+            >
+                {mock}
+            </div>
+        );
     });
 };
 
-function RouteSelector() {
+function MockSelector(props) {
+    const { onClickCallback } = props;
     const [folders, setFolders] = useState([]);
+
     let mocks = [];
     let mocksButtons = [];
 
@@ -44,7 +55,7 @@ function RouteSelector() {
         mocks = getMocks(folders);
     }
 
-    mocksButtons = getMockButtons(mocks);
+    mocksButtons = getMockButtons(mocks, onClickCallback);
 
     return (
         <div>
@@ -56,4 +67,4 @@ function RouteSelector() {
     );
 }
 
-export default RouteSelector;
+export default MockSelector;
