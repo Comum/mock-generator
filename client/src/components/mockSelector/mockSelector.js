@@ -24,13 +24,12 @@ const getMockButtons = (mocks, onClickCallback) => {
 
     return mocks.map((mock, index) => {
         const mockRequestPath = getRequestPath(mock);
-        console.log(mockRequestPath);
         
         return (
             <div
                 key={index}
                 onClick={() => {
-                    onClickCallback(mock);
+                    onClickCallback(mock, mockRequestPath);
                 }}
             >
                 {mock}

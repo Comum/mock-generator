@@ -6,15 +6,17 @@ import MockSelecter from "./components/mockSelector/mockSelector";
 
 function App() {
     const [pageType, setPageType] = useState("empty");
-    const onClickMock = (mock) => {
+    const [requestPath, setRequestPath] = useState("");
+    const onClickMock = (mock, mockRequestPath) => {
         setPageType(mock);
+        setRequestPath(mockRequestPath);
     };
 
     return (
         <div>
             <Header />
             <MockSelecter onClickCallback={onClickMock} />
-            <MockHeader pageType={pageType} />
+            <MockHeader pageType={pageType} requestPath={requestPath} />
         </div>
     );
 }

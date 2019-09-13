@@ -8,7 +8,8 @@ const MockContent = (props) => {
     <div>
         <h3>Mock area</h3>
         <div>
-            {pageType}
+            <div>{pageType}</div>
+            <div>{requestPath}</div>
         </div>
     </div>
 )};
