@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import { path } from "../../constants/constants";
+import { SUPPORTED_REQUEST_PATH } from "../../constants/constants";
+import { getRequestPath } from "../../utils/utils";
 
 const getMocks = (folders) => {
     let mocks = [];
@@ -22,6 +23,9 @@ const getMockButtons = (mocks, onClickCallback) => {
     }
 
     return mocks.map((mock, index) => {
+        const mockRequestPath = getRequestPath(mock);
+        console.log(mockRequestPath);
+        
         return (
             <div
                 key={index}
@@ -44,7 +48,7 @@ function MockSelector(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios(path);
+            const result = await axios(SUPPORTED_REQUEST_PATH);
 
             setFolders(result.data);
         };

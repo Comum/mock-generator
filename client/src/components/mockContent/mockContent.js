@@ -2,6 +2,7 @@ import React from 'react';
 
 const MockContent = (props) => {
     const { pageType } = props;
+    const { requestPath } = props;
     
     return (
     <div>
