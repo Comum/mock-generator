@@ -1,0 +1,12 @@
+{
+    "title": "Event Page Structure",
+    "type": "object",
+    "properties": {
+        "competitions": { "type": "object" },
+        "events": { "type": "object" },
+        "eventPageTabs": { "type": "object" },
+        "eventPageTabsGrids": { "type": "object" },
+        "markets": { "type": "object" },
+        "runners": { "type": "object" }
+    }
+}

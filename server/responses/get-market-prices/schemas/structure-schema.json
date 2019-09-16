@@ -1,0 +1,324 @@
+{
+    "title": "Get Market Prices Structure",
+    "type": "array",
+    "uniqueItems": true,
+    "items": {
+        "type": "object",
+        "properties": {
+            "marketId": {
+                "type": "string" 
+            },
+            "turnInPlayEnabled": {
+                "type": "boolean"
+            },
+            "inplay": {
+                "type": "boolean"
+            },
+            "bspMarket": {
+                "type": "boolean"
+            },
+            "livePriceAvailable": {
+                "type": "boolean"
+            },
+            "guaranteedPriceAvailable": {
+                "type": "boolean"
+            },
+            "runnerDetails": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "selectionId": {
+                            "type": "number"
+                        },
+                        "runnerOrder": {
+                            "type": "number"
+                        },
+                        "runnerOdds": {
+                            "type": "object",
+                            "properties": {
+                                "trueOdds": {
+                                    "type": "object",
+                                    "properties": {
+                                        "decimalOdds": {
+                                            "type": "object",
+                                            "properties": {
+                                                "decimalOdds": {
+                                                    "type": "number",
+                                                    "multipleOf": 0.01
+                                                }
+                                            }
+                                        },
+                                        "fractionalOdds": {
+                                            "type": "object",
+                                            "properties": {
+                                                "numerator": {
+                                                    "type": "number"
+                                                },
+                                                "denominator": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "decimalDisplayOdds": {
+                                    "type": "object",
+                                    "properties": {
+                                        "decimalOdds": {
+                                            "type": "number",
+                                            "multipleOf": 0.01
+                                        }
+                                    }
+                                },
+                                "fractionalDisplayOdds": {
+                                    "type": "object",
+                                    "properties": {
+                                        "numerator": {
+                                            "type": "number"
+                                        },
+                                        "denominator": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "winRunnerOdds": {
+                            "type": "object",
+                            "properties": {
+                                "trueOdds": {
+                                    "type": "object",
+                                    "properties": {
+                                        "decimalOdds": {
+                                            "type": "object",
+                                            "properties": {
+                                                "decimalOdds": {
+                                                    "type": "number",
+                                                    "multipleOf": 0.01
+                                                }
+                                            }
+                                        },
+                                        "fractionalOdds": {
+                                            "type": "object",
+                                            "properties": {
+                                                "numerator": {
+                                                    "type": "number"
+                                                },
+                                                "denominator": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "decimalDisplayOdds": {
+                                    "type": "object",
+                                    "properties": {
+                                        "decimalOdds": {
+                                            "type": "number",
+                                            "multipleOf": 0.01
+                                        }
+                                    }
+                                },
+                                "fractionalDisplayOdds": {
+                                    "type": "object",
+                                    "properties": {
+                                        "numerator": {
+                                            "type": "number"
+                                        },
+                                        "denominator": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "previousRunnerOdds": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "trueOdds": {
+                                        "type": "object",
+                                        "properties": {
+                                            "decimalOdds": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "decimalOdds": {
+                                                        "type": "number",
+                                                        "multipleOf": 0.01
+                                                    }
+                                                }
+                                            },
+                                            "fractionalOdds": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "numerator": {
+                                                        "type": "number"
+                                                    },
+                                                    "denominator": {
+                                                        "type": "number"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "decimalDisplayOdds": {
+                                        "type": "object",
+                                        "properties": {
+                                            "decimalOdds": {
+                                                "type": "number",
+                                                "multipleOf": 0.01
+                                            }
+                                        }
+                                    },
+                                    "fractionalDisplayOdds": {
+                                        "type": "object",
+                                        "properties": {
+                                            "numerator": {
+                                                "type": "number"
+                                            },
+                                            "denominator": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "previousWinRunnerOdds": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "trueOdds": {
+                                        "type": "object",
+                                        "properties": {
+                                            "decimalOdds": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "decimalOdds": {
+                                                        "type": "number",
+                                                        "multipleOf": 0.01
+                                                    }
+                                                }
+                                            },
+                                            "fractionalOdds": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "numerator": {
+                                                        "type": "number"
+                                                    },
+                                                    "denominator": {
+                                                        "type": "number"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "decimalDisplayOdds": {
+                                        "type": "object",
+                                        "properties": {
+                                            "decimalOdds": {
+                                                "type": "number",
+                                                "multipleOf": 0.01
+                                            }
+                                        }
+                                    },
+                                    "fractionalDisplayOdds": {
+                                        "type": "object",
+                                        "properties": {
+                                            "numerator": {
+                                                "type": "number"
+                                            },
+                                            "denominator": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "handicap": {
+                            "type": "number",
+                            "multipleOf": 0.01
+                        },
+                        "runnerStatus": {
+                            "type": "string",
+                            "oneOf": [
+                                {
+                                    "enum": [
+                                        "OPEN",
+                                        "SUSPENDED"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "eachwayAvailable": {
+                "type": "boolean"
+            },
+            "legTypes": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "enum": [
+                                "WINCAST",
+                                "SIMPLE_SELECTION"
+                            ]
+                        }
+                    ]
+                } 
+            },
+            "hasBPE": {
+                "type": "boolean"
+            },
+            "hasSGM": {
+                "type": "boolean"
+            },
+            "linkedMarketId": {
+                "type": "string"
+            },
+            "betDelay": {
+                "type": "number"
+            },
+            "rule4Deductions": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                    "type": "string"
+                }
+            },
+            "marketStatus": {
+                "type": "string",
+                "oneOf": [
+                    {
+                        "enum": [
+                            "OPEN",
+                            "SUSPENDED"
+                        ]
+                    }
+                ]
+            },
+            "bettingType": {
+                "type": "string",
+                "oneOf": [
+                    {
+                        "enum": [
+                            "FIXED_ODDS"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
