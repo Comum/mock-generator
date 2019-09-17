@@ -1,0 +1,11 @@
+{
+    "title": "Get market prices struture",
+    "description": "Form to generate an get market prices mock",
+    "type": "object",
+    "properties": {
+        "prop": {
+            "title": "Prop title",
+            "type": "string"
+        }
+    }
+}

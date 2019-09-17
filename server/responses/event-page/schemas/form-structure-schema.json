@@ -1,0 +1,36 @@
+{
+    "title": "Event Page Structure",
+    "description": "Form to generate an event page mock",
+    "type": "object",
+    "properties": {
+        "competitions": {
+            "title": "Competition",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "title": "Competition Details",
+                "type": "object",
+                "required": ["id", "title", "events"],
+                "properties": {
+                    "id": {
+                        "title": "Competition id",
+                        "type": "number"
+                    },
+                    "title": { 
+                        "title": "Competition title",
+                        "type": "string"
+                    },
+                    "eventIds": {
+                        "title": "Competition events",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "title": "Competiton events id",
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

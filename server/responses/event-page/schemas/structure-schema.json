@@ -1,8 +1,68 @@
 {
     "title": "Event Page Structure",
+    "description": "Form to generate an event page mock",
     "type": "object",
+    "required": [
+        "competitions",
+        "events",
+        "eventPageTabs",
+        "eventPageTabsGrids",
+        "markets",
+        "runners"
+    ],
     "properties": {
-        "competitions": { "type": "object" },
+        "competitions": {
+            "type": "object",
+            "title": "Competitions",
+            "required": [
+                "byId"
+            ],
+            "properties": {
+                "byId": {
+                    "type": "object",
+                    "title": "Id of competitions",
+                    "required": [
+                        "competitionId"
+                    ],
+                    "properties": {
+                        "competitionId": {
+                            "title": "Id of competitions",
+                            "type": "object",
+                            "required": [
+                                "id",
+                                "title",
+                                "eventIds"
+                            ],
+                            "properties": {
+                                "id": {
+                                    "title": "Competition id",
+                                    "type": "number"
+                                },
+                                "title": {
+                                    "title": "Competition title",
+                                    "type": "string"
+                                },
+                                "eventIds": {
+                                    "title": "Competition event ids",
+                                    "type": "array",
+                                    "uniqueItems": true,
+                                    "items": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "allIds": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
         "events": { "type": "object" },
         "eventPageTabs": { "type": "object" },
         "eventPageTabsGrids": { "type": "object" },
