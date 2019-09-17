@@ -8,7 +8,7 @@
             "type": "array",
             "uniqueItems": true,
             "items": {
-                "title": "Competition Details",
+                "title": "Competition details",
                 "type": "object",
                 "required": ["id", "title", "events"],
                 "properties": {
@@ -27,6 +27,47 @@
                         "items": {
                             "title": "Competiton events id",
                             "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        "events": {
+            "title": "Events",
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "title": "Events details",
+                "type": "object",
+                "required": ["id", "eventTypeId", "title", "videoAvailable", "openDate", "eventPageTabIds"],
+                "properties": {
+                    "id": {
+                        "title": "Event id",
+                        "type": "number"
+                    },
+                    "eventTypeId": {
+                        "title": "Event type id",
+                        "type": "number"
+                    },
+                    "title": {
+                        "title": "Event title",
+                        "type": "text"
+                    },
+                    "videoAvailable": {
+                        "title": "Event video available",
+                        "type": "boolean"
+                    },
+                    "openDate": {
+                        "title": "Event open date",
+                        "type": "date"
+                    },
+                    "eventPageTabIds": {
+                        "title": "Event page tab ids",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "title": "Event page tab id",
+                            "type": "string"
                         }
                     }
                 }
