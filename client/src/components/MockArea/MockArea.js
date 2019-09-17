@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import FormContent from "../formComponents/FormContent/FormContent";
+import MockContent from "../formComponents/MockContent/MockContent";
 
-const MockContent = (props) => {
+const MockArea = (props) => {
     const { pageType } = props;
     const { requestPath } = props;
     const [mock, setMock] = useState({});
@@ -22,9 +22,9 @@ const MockContent = (props) => {
     return (
         <div>
             <h3>Mock area</h3>
-            <FormContent title={pageType} mock={mock} />
+            <MockContent title={pageType} mock={mock} />
         </div>
     );
 };
 
-export default MockContent;
+export default MockArea;
