@@ -4,4 +4,14 @@ const SCHEMAS_PATH = `${MAIN_PATH}schemas-json/`;
 
 const MAIN_SCHEMA = "structure-schema";
 
-export { MAIN_PATH, SUPPORTED_REQUEST_PATH, SCHEMAS_PATH, MAIN_SCHEMA };
+const EMPTY_MOCK_TITLE = "empty";
+const NO_MOCK_SELECTED = "No mock selected";
+
+export {
+    MAIN_PATH,
+    SUPPORTED_REQUEST_PATH,
+    SCHEMAS_PATH,
+    MAIN_SCHEMA,
+    EMPTY_MOCK_TITLE,
+    NO_MOCK_SELECTED
+};

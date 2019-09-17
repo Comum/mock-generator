@@ -6,4 +6,9 @@ const getRequestPath = (mock) => {
     return mockPath;
 };
 
-export { getRequestPath };
+const capitalise = (string) => string.toLowerCase().replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
+
+export {
+    getRequestPath,
+    capitalise
+};

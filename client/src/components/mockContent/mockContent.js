@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import FormContent from "../formComponents/FormContent/FormContent";
+
 const MockContent = (props) => {
     const { pageType } = props;
     const { requestPath } = props;
@@ -20,10 +22,7 @@ const MockContent = (props) => {
     return (
         <div>
             <h3>Mock area</h3>
-            <div>
-                <div>{pageType}</div>
-                <div>{requestPath}</div>
-            </div>
+            <FormContent title={pageType} mock={mock} />
         </div>
     );
 };
