@@ -8,7 +8,7 @@ function MockContent(props) {
     let form = <div>Please select a mock.</div>;
 
     if (Object.keys(mock).length !== 0) {
-        form = <FormContainer />;
+        form = <FormContainer mock={mock} />;
     }
 
     return (
