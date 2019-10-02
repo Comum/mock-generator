@@ -21,400 +21,344 @@
                         "type": "string"
                     },
                     "eventIds": {
-                        "title": "Competition events",
+                        "title": "Events",
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
-                            "title": "Competiton events id",
-                            "type": "number"
-                        }
-                    }
-                }
-            }
-        },
-        "events": {
-            "title": "Event",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "title": "Events details",
-                "type": "object",
-                "required": ["id", "eventTypeId", "title", "videoAvailable", "openDate", "eventPageTabIds"],
-                "properties": {
-                    "id": {
-                        "title": "Event id",
-                        "type": "number"
-                    },
-                    "eventTypeId": {
-                        "title": "Event type id",
-                        "type": "number"
-                    },
-                    "title": {
-                        "title": "Event title",
-                        "type": "text"
-                    },
-                    "videoAvailable": {
-                        "title": "Event video available",
-                        "type": "boolean"
-                    },
-                    "openDate": {
-                        "title": "Event open date",
-                        "type": "date"
-                    },
-                    "eventPageTabIds": {
-                        "title": "Event page tab ids",
-                        "type": "array",
-                        "uniqueItems": true,
-                        "items": {
-                            "title": "Event page tab id",
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "eventPageTabs": {
-            "title": "Event Page Tabs",
-            "type": "array",
-            "items": {
-                "title": "Event page tab",
-                "type": "object",
-                "properties": {
-                    "id": { "type": "string" },
-                    "badge": { "type": "string" },
-                    "title": { "type": "string" },
-                    "isDefaultTab": { "type": "boolean" },
-                    "isAllMarketsTab": { "type": "boolean" },
-                    "eventPageTabGridIds": {
-                        "type": "array",
-                        "uniqueItems": true,
-                        "items": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "eventPageTabsGrids": {
-            "title": "Event Page Tabs Grids",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "eventPageTabsGridID": {
-                        "title": "Event page tabs grid element",
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "title": "Id",
-                                "type": "string"
-                            },
-                            "title": {
-                                "title": "Event page tabs grid Title",
-                                "type": "string"
-                            },
-                            "blurb": {
-                                "title": "Event page tabs grid blurb",
-                                "type": "string"
-                            },
-                            "isExpanded": {
-                                "title": "Event page tabs grid is expanded",
-                                "type": "boolean"
-                            },
-                            "visibleLinesNumber": {
-                                "title": "Event page tabs grid Visible lines number",
-                                "type": "number"
-                            },
-                            "template": {
-                                "title": "Event page tabs grid Template",
-                                "type": "string",
-                                "enum": [
-                                    "simple",
-                                    "ODDSBOOST",
-                                    "RUNNERS_LISTS_X_2BETBUTTONS",
-                                    "BTTS",
-                                    "GOAL_SCORER",
-                                    "MATCH_ODDS_TO_QUALIFY_HANDICAP",
-                                    "MATCH_HANDICAP",
-                                    "CORRECT_SCORE",
-                                    "CAST_MARKETS",
-                                    "QUICK_HIT_MARKET"
-                                ]
-                            },
-                            "tabs": {
-                                "title": "Event page tabs grid - tabs",
-                                "type": "array",
-                                "uniqueItems": true,
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "title": {
-                                            "title": "Grid tab title",
-                                            "type": "string"
-                                        },
-                                        "blurb": {
-                                            "title": "Grid tab blurb",
-                                            "type": "string"
-                                        },
-                                        "handicapTypeLabel": {
-                                            "title": "Grid tab handicap type label",
-                                            "description": "only relevant with MATCH_HANDICAP template",
-                                            "type": "string"
-                                        },
-                                        "headerLabels": {
-                                            "title": "Grid tab header labels",
-                                            "type": "array",
-                                            "uniqueItems": true,
-                                            "items": {
-                                                "title": "Header label",
+                            "title": "Event",
+                            "type": "object",
+                            "required": ["id", "eventTypeId", "title", "videoAvailable", "openDate", "eventPageTabIds"],
+                            "properties": {
+                                "id": {
+                                    "title": "Event id",
+                                    "type": "number"
+                                },
+                                "eventTypeId": {
+                                    "title": "Event type id",
+                                    "type": "number"
+                                },
+                                "title": {
+                                    "title": "Event title",
+                                    "type": "string"
+                                },
+                                "videoAvailable": {
+                                    "title": "Event video available",
+                                    "type": "boolean"
+                                },
+                                "openDate": {
+                                    "title": "Event open date",
+                                    "type": "string"
+                                },
+                                "eventPageTabIds": {
+                                    "title": "Event page tab ids",
+                                    "type": "array",
+                                    "uniqueItems": true,
+                                    "items": {
+                                        "title": "Event page tab element",
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "title": "Event page tab id - id",
                                                 "type": "string"
-                                            }
-                                        },
-                                        "marketTypeConfigs": {
-                                            "title": "Grid tab market type configs",
-                                            "type": "array",
-                                            "uniqueItems": true,
-                                            "items": {
-                                                "title": "Grid tab market type",
-                                                "type": "object",
-                                                "properties": {
-                                                    "marketType": {
-                                                        "title": "Market type",
-                                                        "description": "Will be validated in the backend",
-                                                        "type": "string"
-                                                    },
-                                                    "blurb": {
-                                                        "title": "Market type",
-                                                        "type": "string"
+                                            },
+                                            "badge": {
+                                                "title": "Badge",
+                                                "type": "string"
+                                            },
+                                            "title": {
+                                                "title": "Title",
+                                                "type": "string"
+                                            },
+                                            "isDefaultTab": {
+                                                "title": "Is default tab",
+                                                "type": "boolean"
+                                            },
+                                            "isAllMarketsTab": {
+                                                "title": "Is all markets tab",
+                                                "type": "boolean"
+                                            },
+                                            "eventPageTabGridIds": {
+                                                "title": "Event page tab grid ids",
+                                                "type": "array",
+                                                "uniqueItems": true,
+                                                "items": {
+                                                    "title": "Event page tab grid id",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "id": {
+                                                            "title": "Id",
+                                                            "type": "string"
+                                                        },
+                                                        "title": {
+                                                            "title": "Event page tabs grid Title",
+                                                            "type": "string"
+                                                        },
+                                                        "blurb": {
+                                                            "title": "Event page tabs grid blurb",
+                                                            "type": "string"
+                                                        },
+                                                        "isExpanded": {
+                                                            "title": "Event page tabs grid is expanded",
+                                                            "type": "boolean"
+                                                        },
+                                                        "visibleLinesNumber": {
+                                                            "title": "Event page tabs grid Visible lines number",
+                                                            "type": "number"
+                                                        },
+                                                        "template": {
+                                                            "title": "Event page tabs grid Template",
+                                                            "type": "string",
+                                                            "enum": [
+                                                                "simple",
+                                                                "ODDSBOOST",
+                                                                "RUNNERS_LISTS_X_2BETBUTTONS",
+                                                                "BTTS",
+                                                                "GOAL_SCORER",
+                                                                "MATCH_ODDS_TO_QUALIFY_HANDICAP",
+                                                                "MATCH_HANDICAP",
+                                                                "CORRECT_SCORE",
+                                                                "CAST_MARKETS",
+                                                                "QUICK_HIT_MARKET"
+                                                            ]
+                                                        },
+                                                        "tabs": {
+                                                            "title": "Event page tabs grid - tabs",
+                                                            "type": "array",
+                                                            "uniqueItems": true,
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "title": {
+                                                                        "title": "Grid tab title",
+                                                                        "type": "string"
+                                                                    },
+                                                                    "blurb": {
+                                                                        "title": "Grid tab blurb",
+                                                                        "type": "string"
+                                                                    },
+                                                                    "handicapTypeLabel": {
+                                                                        "title": "Grid tab handicap type label",
+                                                                        "description": "only relevant with MATCH_HANDICAP template",
+                                                                        "type": "string"
+                                                                    },
+                                                                    "headerLabels": {
+                                                                        "title": "Grid tab header labels",
+                                                                        "type": "array",
+                                                                        "uniqueItems": true,
+                                                                        "items": {
+                                                                            "title": "Header label",
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "marketTypeConfigs": {
+                                                                        "title": "Grid tab market type configs",
+                                                                        "type": "array",
+                                                                        "uniqueItems": true,
+                                                                        "items": {
+                                                                            "title": "Grid tab market type",
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                                "marketType": {
+                                                                                    "title": "Market type",
+                                                                                    "description": "Will be validated in the backend",
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "blurb": {
+                                                                                    "title": "Market type",
+                                                                                    "type": "string"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "marketIds": {
+                                                                        "type": "array",
+                                                                        "uniqueItems": true,
+                                                                        "items": {
+                                                                            "title": "Grid tab market ids",
+                                                                            "type": "object",
+                                                                            "required": ["id", "marketType", "name", "marketTime", "marketStatus", "runnerIds", "legTypes"],
+                                                                            "properties": {
+                                                                                "id": {
+                                                                                    "title": "Market ID",
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "hasCashout": {
+                                                                                    "title": "Market has cashout",
+                                                                                    "type": "boolean"
+                                                                                },
+                                                                                "hasEWCashout": {
+                                                                                    "title": "Market has each way cashout",
+                                                                                    "type": "boolean"
+                                                                                },
+                                                                                "marketType": {
+                                                                                    "title": "Market type",
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "canTurnInplay": {
+                                                                                    "title": "Market can turn inplay",
+                                                                                    "type": "boolean"
+                                                                                },
+                                                                                "name": {
+                                                                                    "title": "Market name",
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "inplay": {
+                                                                                    "title": "Market is inplay",
+                                                                                    "type": "boolean"
+                                                                                },
+                                                                                "sgmMarket": {
+                                                                                    "title": "Market is same game multi market",
+                                                                                    "type": "boolean"
+                                                                                },
+                                                                                "bspMarket": {
+                                                                                    "title": "Market bsp market",
+                                                                                    "type": "boolean"
+                                                                                },
+                                                                                "marketTime": {
+                                                                                    "title": "Market market time",
+                                                                                    "description": "Please use format yyyy-mm-dd-hh:mm:ss",
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "bettingType": {
+                                                                                    "title": "Market betting type",
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "marketStatus": {
+                                                                                    "title": "Market status",
+                                                                                    "type": "string",
+                                                                                    "enum": [
+                                                                                        "OPEN",
+                                                                                        "SUSPENDED"
+                                                                                    ]
+                                                                                },
+                                                                                "marketLevels": {
+                                                                                    "title": "Market level",
+                                                                                    "type": "array",
+                                                                                    "uniqueItems": true,
+                                                                                    "items": {
+                                                                                        "title": "Market level",
+                                                                                        "type": "string"
+                                                                                    }
+                                                                                },
+                                                                                "sortPriority": {
+                                                                                    "title": "Market sort priority",
+                                                                                    "type": "number"
+                                                                                },
+                                                                                "guaranteedPriceAvailable": {
+                                                                                    "title": "Market guaranteed price available",
+                                                                                    "type": "boolean"
+                                                                                },
+                                                                                "legTypes": {
+                                                                                    "title": "Market leg types",
+                                                                                    "type": "array",
+                                                                                    "uniqueItems": true,
+                                                                                    "items": {
+                                                                                        "title": "Market leg type",
+                                                                                        "type": "string"
+                                                                                    }
+                                                                                },
+                                                                                "runnerIds": {
+                                                                                    "title": "Market runner ids",
+                                                                                    "type": "array",
+                                                                                    "uniqueItems": true,
+                                                                                    "items": {
+                                                                                        "title": "Runner id",
+                                                                                        "type": "object",
+                                                                                        "required": ["id", "selectionId", "winRunnerOdds", "name", "sortPriority", "result"],
+                                                                                        "properties": {
+                                                                                            "id": {
+                                                                                                "title": "Runner id",
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "winRunnerOdds": {
+                                                                                                "title": "Runner win runner odds",
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                    "trueOdds": {
+                                                                                                        "title": "Runner true odds",
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "decimalOdds": {
+                                                                                                                "title": "Runner decimal odds value",
+                                                                                                                "type": "number"
+                                                                                                            },
+                                                                                                            "fractionalOdds": {
+                                                                                                                "title": "Runner fractional odds",
+                                                                                                                "type": "object",
+                                                                                                                "properties": {
+                                                                                                                    "numerator": {
+                                                                                                                        "title": "Runner fractional odds numerator",
+                                                                                                                        "type": "number"
+                                                                                                                    },
+                                                                                                                    "denominator": {
+                                                                                                                        "title": "Runner fractional odds denominator",
+                                                                                                                        "type": "number"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "decimalDisplayOdds": {
+                                                                                                        "title": "Runner decimal display odds",
+                                                                                                        "type": "number"
+                                                                                                    },
+                                                                                                    "fractionalDisplayOdds": {
+                                                                                                        "title": "Runner fractional display odds",
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "numerator": {
+                                                                                                                "title": "Runner fractional display odds numerator",
+                                                                                                                "type": "number"
+                                                                                                            },
+                                                                                                            "denominator": {
+                                                                                                                "title": "Runner fractional display odds denominator",
+                                                                                                                "type": "number"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "selectionId": {
+                                                                                                "title": "Runner selection id",
+                                                                                                "type": "number"
+                                                                                            },
+                                                                                            "name": {
+                                                                                                "title": "Runner name",
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "sortPriority": {
+                                                                                                "title": "Runner dort pirority",
+                                                                                                "type": "number"
+                                                                                            },
+                                                                                            "result": {
+                                                                                                "title": "Runner result",
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                    "resultType": {
+                                                                                                        "title": "Runner result type",
+                                                                                                        "type": "string"
+                                                                                                    },
+                                                                                                    "handicap": {
+                                                                                                        "title": "Runner result type",
+                                                                                                        "type": "number"
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
-                                        },
-                                        "marketIds": {
-                                            "type": "array",
-                                            "uniqueItems": true,
-                                            "items": {
-                                                "title": "Grid tab market ids",
-                                                "type": "string"
-                                            }
                                         }
                                     }
                                 }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "markets": {
-            "title": "Markets",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "title": "Market details",
-                "type": "object",
-                "required": ["id", "marketType", "name", "marketTime", "marketStatus", "runnerIds", "legTypes"],
-                "properties": {
-                    "id": {
-                        "title": "Market ID",
-                        "type": "string"
-                    },
-                    "hasCashout": {
-                        "title": "Market has cashout",
-                        "type": "boolean"
-                    },
-                    "hasEWCashout": {
-                        "title": "Market has each way cashout",
-                        "type": "boolean"
-                    },
-                    "marketType": {
-                        "title": "Market type",
-                        "type": "string"
-                    },
-                    "canTurnInplay": {
-                        "title": "Market can turn inplay",
-                        "type": "boolean"
-                    },
-                    "name": {
-                        "title": "Market name",
-                        "type": "string"
-                    },
-                    "inplay": {
-                        "title": "Market is inplay",
-                        "type": "boolean"
-                    },
-                    "sgmMarket": {
-                        "title": "Market is same game multi market",
-                        "type": "boolean"
-                    },
-                    "bspMarket": {
-                        "title": "Market bsp market",
-                        "type": "boolean"
-                    },
-                    "marketTime": {
-                        "title": "Market market time",
-                        "description": "Please use format yyyy-mm-dd-hh:mm:ss",
-                        "type": "string"
-                    },
-                    "bettingType": {
-                        "title": "Market betting type",
-                        "type": "string"
-                    },
-                    "marketStatus": {
-                        "title": "Market status",
-                        "type": "string",
-                        "enum": [
-                            "OPEN",
-                            "SUSPENDED"
-                        ]
-                    },
-                    "marketLevels": {
-                        "title": "Market level",
-                        "type": "array",
-                        "uniqueItems": true,
-                        "items": {
-                            "title": "Market level",
-                            "type": "string"
-                        }
-                    },
-                    "sortPriority": {
-                        "title": "Market sort priority",
-                        "type": "number"
-                    },
-                    "runnerIds": {
-                        "title": "Market runner ids",
-                        "type": "array",
-                        "uniqueItems": true,
-                        "items": {
-                            "title": "Runner id",
-                            "type": "string"
-                        }
-                    },
-                    "guaranteedPriceAvailable": {
-                        "title": "Market guaranteed price available",
-                        "type": "boolean"
-                    },
-                    "legTypes": {
-                        "title": "Market leg types",
-                        "type": "array",
-                        "uniqueItems": true,
-                        "items": {
-                            "title": "Market leg type",
-                            "type": "string"
-                        }
-                    }
-                }
-            }  
-        },
-        "runners": {
-            "title": "Runners",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "title": "Runner details",
-                "type": "object",
-                "required": ["id", "selectionId", "winRunnerOdds", "name", "sortPriority", "result"],
-                "properties": {
-                    "id": {
-                        "title": "Runner id",
-                        "type": "string"
-                    },
-                    "winRunnerOdds": {
-                        "title": "Runner win runner odds",
-                        "type": "object",
-                        "properties": {
-                            "trueOdds": {
-                                "title": "Runner true odds",
-                                "type": "object",
-                                "properties": {
-                                    "decimalOdds": {
-                                        "title": "Runner decimal odds",
-                                        "type": "object",
-                                        "properties": {
-                                            "decimalOdds": {
-                                                "title": "Runner decimal odds value",
-                                                "type": "number"
-                                            }
-                                        }
-                                    },
-                                    "fractionalOdds": {
-                                        "title": "Runner fractional odds",
-                                        "type": "object",
-                                        "properties": {
-                                            "numerator": {
-                                                "title": "Runner fractional odds numerator",
-                                                "type": "number"
-                                            },
-                                            "denominator": {
-                                                "title": "Runner fractional odds denominator",
-                                                "type": "number"
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "decimalDisplayOdds": {
-                                "title": "Runner decimal display odds",
-                                "type": "object",
-                                "properties": {
-                                    "decimalOdds": {
-                                        "title": "Runner decimal display odds",
-                                        "type": "object",
-                                        "properties": {
-                                            "decimalOdds": {
-                                                "title": "Runner decimal display odds value",
-                                                "type": "number"
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "fractionalDisplayOdds": {
-                                "title": "Runner fractional display odds",
-                                "type": "object",
-                                "properties": {
-                                    "fractionalOdds": {
-                                        "title": "Runner fractional display odds",
-                                        "type": "object",
-                                        "properties": {
-                                            "numerator": {
-                                                "title": "Runner fractional display odds numerator",
-                                                "type": "number"
-                                            },
-                                            "denominator": {
-                                                "title": "Runner fractional display odds denominator",
-                                                "type": "number"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "selectionId": {
-                        "title": "Runner selection id",
-                        "type": "number"
-                    },
-                    "name": {
-                        "title": "Runner name",
-                        "type": "string"
-                    },
-                    "sortPriority": {
-                        "title": "Runner dort pirority",
-                        "type": "number"
-                    },
-                    "result": {
-                        "title": "Runner result",
-                        "type": "object",
-                        "properties": {
-                            "resultType": {
-                                "title": "Runner result type",
-                                "type": "string"
-                            },
-                            "handicap": {
-                                "title": "Runner result type",
-                                "type": "number"
                             }
                         }
                     }
