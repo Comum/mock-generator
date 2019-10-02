@@ -10,7 +10,7 @@
             "items": {
                 "title": "Competition details",
                 "type": "object",
-                "required": ["id", "title", "events"],
+                "required": ["id", "title"],
                 "properties": {
                     "id": {
                         "title": "Competition id",
@@ -27,7 +27,7 @@
                         "items": {
                             "title": "Event",
                             "type": "object",
-                            "required": ["id", "eventTypeId", "title", "videoAvailable", "openDate", "eventPageTabIds"],
+                            "required": ["id", "eventTypeId", "title", "openDate"],
                             "properties": {
                                 "id": {
                                     "title": "Event id",
@@ -176,7 +176,7 @@
                                                                         "items": {
                                                                             "title": "Grid tab market ids",
                                                                             "type": "object",
-                                                                            "required": ["id", "marketType", "name", "marketTime", "marketStatus", "runnerIds", "legTypes"],
+                                                                            "required": ["id", "marketType", "name", "marketTime", "marketStatus", "legTypes"],
                                                                             "properties": {
                                                                                 "id": {
                                                                                     "title": "Market ID",
@@ -258,7 +258,7 @@
                                                                                     }
                                                                                 },
                                                                                 "runnerIds": {
-                                                                                    "title": "Market runner ids",
+                                                                                    "title": "Market runners",
                                                                                     "type": "array",
                                                                                     "uniqueItems": true,
                                                                                     "items": {

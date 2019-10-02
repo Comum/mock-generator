@@ -1,5 +1,5 @@
-import React from 'react';
-import Form from 'react-jsonschema-form';
+import React from "react";
+import Form from "react-jsonschema-form";
 
 // types
 // - object
@@ -12,12 +12,16 @@ import Form from 'react-jsonschema-form';
 //     console.log(mock);
 // }
 
+function onSubmit({ formData }, e) {
+    console.log("Data submitted: ", formData);
+}
+
 function FormContainer(props) {
     const { mock } = props;
     let form = <div></div>;
 
     if (Object.keys(mock).length !== 0) {
-        form = <Form schema={mock}/>
+        form = <Form schema={mock} onSubmit={onSubmit} />;
     }
 
     return (
