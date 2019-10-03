@@ -237,105 +237,125 @@
                                                                             }
                                                                         }
                                                                     },
-                                                                    "marketIds": {
+                                                                    "markets": {
+                                                                        "title": "Markets",
                                                                         "type": "array",
                                                                         "uniqueItems": true,
                                                                         "items": {
-                                                                            "title": "Grid tab market ids",
+                                                                            "title": "Market element",
                                                                             "type": "object",
-                                                                            "required": ["id", "marketType", "name", "marketTime", "marketStatus", "legTypes"],
+                                                                            "required": ["id", "marketType", "name", "marketTime", "marketStatus"],
                                                                             "properties": {
                                                                                 "id": {
                                                                                     "title": "Market ID",
-                                                                                    "type": "string"
+                                                                                    "type": "string",
+                                                                                    "default": "924.xxxxxxxxx"
                                                                                 },
                                                                                 "hasCashout": {
                                                                                     "title": "Market has cashout",
-                                                                                    "type": "boolean"
+                                                                                    "type": "boolean",
+                                                                                    "default": false
                                                                                 },
                                                                                 "hasEWCashout": {
                                                                                     "title": "Market has each way cashout",
-                                                                                    "type": "boolean"
+                                                                                    "type": "boolean",
+                                                                                    "default": false
                                                                                 },
                                                                                 "marketType": {
                                                                                     "title": "Market type",
-                                                                                    "type": "string"
+                                                                                    "type": "string",
+                                                                                    "description": "Market type will be validated in the backend",
+                                                                                    "default": "MATCH_ODDS"
                                                                                 },
                                                                                 "canTurnInplay": {
                                                                                     "title": "Market can turn inplay",
-                                                                                    "type": "boolean"
+                                                                                    "type": "boolean",
+                                                                                    "default": false
                                                                                 },
                                                                                 "name": {
                                                                                     "title": "Market name",
-                                                                                    "type": "string"
+                                                                                    "type": "string",
+                                                                                    "default": "Market name"
                                                                                 },
                                                                                 "inplay": {
                                                                                     "title": "Market is inplay",
-                                                                                    "type": "boolean"
+                                                                                    "type": "boolean",
+                                                                                    "default": false
                                                                                 },
                                                                                 "sgmMarket": {
                                                                                     "title": "Market is same game multi market",
-                                                                                    "type": "boolean"
+                                                                                    "type": "boolean",
+                                                                                    "default": false
                                                                                 },
                                                                                 "bspMarket": {
                                                                                     "title": "Market bsp market",
-                                                                                    "type": "boolean"
+                                                                                    "type": "boolean",
+                                                                                    "default": false
                                                                                 },
                                                                                 "marketTime": {
                                                                                     "title": "Market market time",
                                                                                     "description": "Please use format yyyy-mm-dd-hh:mm:ss",
-                                                                                    "type": "string"
+                                                                                    "type": "string",
+                                                                                    "default": "1970-01-01-00:00:00"
                                                                                 },
                                                                                 "bettingType": {
                                                                                     "title": "Market betting type",
-                                                                                    "type": "string"
+                                                                                    "type": "string",
+                                                                                    "default": "ODDS",
+                                                                                    "enum": [
+                                                                                        "ODDS",
+                                                                                        "LINE",
+                                                                                        "RANGE",
+                                                                                        "MOVING_HANDICAP"
+                                                                                    ]
                                                                                 },
                                                                                 "marketStatus": {
                                                                                     "title": "Market status",
                                                                                     "type": "string",
+                                                                                    "default": "OPEN",
                                                                                     "enum": [
                                                                                         "OPEN",
                                                                                         "SUSPENDED"
                                                                                     ]
                                                                                 },
                                                                                 "marketLevels": {
-                                                                                    "title": "Market level",
+                                                                                    "title": "Market levels",
                                                                                     "type": "array",
                                                                                     "uniqueItems": true,
                                                                                     "items": {
                                                                                         "title": "Market level",
-                                                                                        "type": "string"
+                                                                                        "type": "string",
+                                                                                        "default": "AVB_EVENT",
+                                                                                        "enum": [
+                                                                                            "AVB_EVENT",
+                                                                                            "COMPETITION"
+                                                                                        ]
                                                                                     }
                                                                                 },
                                                                                 "sortPriority": {
                                                                                     "title": "Market sort priority",
-                                                                                    "type": "number"
+                                                                                    "type": "number",
+                                                                                    "default": 1
                                                                                 },
                                                                                 "guaranteedPriceAvailable": {
                                                                                     "title": "Market guaranteed price available",
-                                                                                    "type": "boolean"
+                                                                                    "type": "boolean",
+                                                                                    "default": false
                                                                                 },
-                                                                                "legTypes": {
-                                                                                    "title": "Market leg types",
+                                                                                "runners": {
+                                                                                    "title": "Runners",
                                                                                     "type": "array",
                                                                                     "uniqueItems": true,
                                                                                     "items": {
-                                                                                        "title": "Market leg type",
-                                                                                        "type": "string"
-                                                                                    }
-                                                                                },
-                                                                                "runnerIds": {
-                                                                                    "title": "Market runners",
-                                                                                    "type": "array",
-                                                                                    "uniqueItems": true,
-                                                                                    "items": {
-                                                                                        "title": "Runner id",
+                                                                                        "title": "Runner",
                                                                                         "type": "object",
                                                                                         "required": ["id", "selectionId", "winRunnerOdds", "name", "sortPriority", "result"],
                                                                                         "properties": {
                                                                                             "id": {
                                                                                                 "title": "Runner id",
-                                                                                                "type": "string"
+                                                                                                "type": "string",
+                                                                                                "description": "Runner id follows the format ${marketId}-${selectionId}",
+                                                                                                "default": "924.xxxxxxxxx.1234"
                                                                                             },
                                                                                             "winRunnerOdds": {
                                                                                                 "title": "Runner win runner odds",
@@ -347,7 +367,8 @@
                                                                                                         "properties": {
                                                                                                             "decimalOdds": {
                                                                                                                 "title": "Runner decimal odds value",
-                                                                                                                "type": "number"
+                                                                                                                "type": "number",
+                                                                                                                "default": 2.01
                                                                                                             },
                                                                                                             "fractionalOdds": {
                                                                                                                 "title": "Runner fractional odds",
@@ -355,11 +376,13 @@
                                                                                                                 "properties": {
                                                                                                                     "numerator": {
                                                                                                                         "title": "Runner fractional odds numerator",
-                                                                                                                        "type": "number"
+                                                                                                                        "type": "number",
+                                                                                                                        "default": 4
                                                                                                                     },
                                                                                                                     "denominator": {
                                                                                                                         "title": "Runner fractional odds denominator",
-                                                                                                                        "type": "number"
+                                                                                                                        "type": "number",
+                                                                                                                        "default": 2
                                                                                                                     }
                                                                                                                 }
                                                                                                             }
@@ -367,7 +390,8 @@
                                                                                                     },
                                                                                                     "decimalDisplayOdds": {
                                                                                                         "title": "Runner decimal display odds",
-                                                                                                        "type": "number"
+                                                                                                        "type": "number",
+                                                                                                        "default": 2.01
                                                                                                     },
                                                                                                     "fractionalDisplayOdds": {
                                                                                                         "title": "Runner fractional display odds",
@@ -375,11 +399,13 @@
                                                                                                         "properties": {
                                                                                                             "numerator": {
                                                                                                                 "title": "Runner fractional display odds numerator",
-                                                                                                                "type": "number"
+                                                                                                                "type": "number",
+                                                                                                                "default": 4
                                                                                                             },
                                                                                                             "denominator": {
                                                                                                                 "title": "Runner fractional display odds denominator",
-                                                                                                                "type": "number"
+                                                                                                                "type": "number",
+                                                                                                                "default": 2
                                                                                                             }
                                                                                                         }
                                                                                                     }
@@ -387,15 +413,18 @@
                                                                                             },
                                                                                             "selectionId": {
                                                                                                 "title": "Runner selection id",
-                                                                                                "type": "number"
+                                                                                                "type": "number",
+                                                                                                "default": 1234
                                                                                             },
                                                                                             "name": {
                                                                                                 "title": "Runner name",
-                                                                                                "type": "string"
+                                                                                                "type": "string",
+                                                                                                "default": "Runner name"
                                                                                             },
                                                                                             "sortPriority": {
-                                                                                                "title": "Runner dort pirority",
-                                                                                                "type": "number"
+                                                                                                "title": "Runner sort priority",
+                                                                                                "type": "number",
+                                                                                                "default": 1
                                                                                             },
                                                                                             "result": {
                                                                                                 "title": "Runner result",
@@ -403,11 +432,28 @@
                                                                                                 "properties": {
                                                                                                     "resultType": {
                                                                                                         "title": "Runner result type",
-                                                                                                        "type": "string"
+                                                                                                        "type": "string",
+                                                                                                        "default": "HOME",
+                                                                                                        "enum": [
+                                                                                                            "HOME",
+                                                                                                            "LINE",
+                                                                                                            "AWAY"
+                                                                                                        ]
                                                                                                     },
                                                                                                     "handicap": {
-                                                                                                        "title": "Runner result type",
-                                                                                                        "type": "number"
+                                                                                                        "title": "Runner result handicap",
+                                                                                                        "type": "number",
+                                                                                                        "default": -1
+                                                                                                    },
+                                                                                                    "scoreHome": {
+                                                                                                        "title": "Runner score home",
+                                                                                                        "type": "number",
+                                                                                                        "default": 0
+                                                                                                    },
+                                                                                                    "scoreAway": {
+                                                                                                        "title": "Runner score away",
+                                                                                                        "type": "number",
+                                                                                                        "default": 0
                                                                                                     }
                                                                                                 }
                                                                                             }
