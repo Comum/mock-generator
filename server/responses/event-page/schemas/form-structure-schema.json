@@ -190,16 +190,19 @@
                                                                 "properties": {
                                                                     "title": {
                                                                         "title": "Grid tab title",
-                                                                        "type": "string"
+                                                                        "type": "string",
+                                                                        "default": "Grid tab title"
                                                                     },
                                                                     "blurb": {
                                                                         "title": "Grid tab blurb",
-                                                                        "type": "string"
+                                                                        "type": "string",
+                                                                        "defualt": ""
                                                                     },
                                                                     "handicapTypeLabel": {
                                                                         "title": "Grid tab handicap type label",
                                                                         "description": "only relevant with MATCH_HANDICAP template",
-                                                                        "type": "string"
+                                                                        "type": "string",
+                                                                        "default": ""
                                                                     },
                                                                     "headerLabels": {
                                                                         "title": "Grid tab header labels",
@@ -207,11 +210,13 @@
                                                                         "uniqueItems": true,
                                                                         "items": {
                                                                             "title": "Header label",
-                                                                            "type": "string"
+                                                                            "type": "string",
+                                                                            "default": "Header label value"
                                                                         }
                                                                     },
                                                                     "marketTypeConfigs": {
                                                                         "title": "Grid tab market type configs",
+                                                                        "description": "Market type and blurb",
                                                                         "type": "array",
                                                                         "uniqueItems": true,
                                                                         "items": {
@@ -221,11 +226,13 @@
                                                                                 "marketType": {
                                                                                     "title": "Market type",
                                                                                     "description": "Will be validated in the backend",
-                                                                                    "type": "string"
+                                                                                    "type": "string",
+                                                                                    "default": "MATCH_ODDS"
                                                                                 },
                                                                                 "blurb": {
-                                                                                    "title": "Market type",
-                                                                                    "type": "string"
+                                                                                    "title": "Market blurb",
+                                                                                    "type": "string",
+                                                                                    "default": ""
                                                                                 }
                                                                             }
                                                                         }
