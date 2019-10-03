@@ -94,8 +94,8 @@
                                     "description": "Please use format yyyy-mm-dd-hh:mm:ss",
                                     "default": "1970-01-01-00:00:00"
                                 },
-                                "eventPageTabIds": {
-                                    "title": "Event page tab ids",
+                                "eventPageTabs": {
+                                    "title": "Event page tabs",
                                     "type": "array",
                                     "uniqueItems": true,
                                     "items": {
@@ -104,55 +104,69 @@
                                         "properties": {
                                             "id": {
                                                 "title": "Event page tab id - id",
-                                                "type": "string"
+                                                "type": "string",
+                                                "description": "Please use format ${sport}-position:${position}",
+                                                "default": "SOCCER-position:0"
                                             },
                                             "badge": {
                                                 "title": "Badge",
-                                                "type": "string"
+                                                "type": "string",
+                                                "description": "Supported values: NEW",
+                                                "default": ""
                                             },
                                             "title": {
                                                 "title": "Title",
-                                                "type": "string"
+                                                "type": "string",
+                                                "default": "Tab title"
                                             },
                                             "isDefaultTab": {
                                                 "title": "Is default tab",
-                                                "type": "boolean"
+                                                "type": "boolean",
+                                                "default": false
                                             },
                                             "isAllMarketsTab": {
                                                 "title": "Is all markets tab",
-                                                "type": "boolean"
+                                                "type": "boolean",
+                                                "default": false
                                             },
-                                            "eventPageTabGridIds": {
-                                                "title": "Event page tab grid ids",
+                                            "eventPageTabGrids": {
+                                                "title": "Event page tab grids",
                                                 "type": "array",
                                                 "uniqueItems": true,
                                                 "items": {
-                                                    "title": "Event page tab grid id",
+                                                    "title": "Event page tab grid element",
                                                     "type": "object",
                                                     "properties": {
                                                         "id": {
                                                             "title": "Id",
-                                                            "type": "string"
+                                                            "type": "string",
+                                                            "description": "Please use format ${sport}-position:${position}-${webFormTemplateName}",
+                                                            "default": "SOCCER-position:0-MG_Football_MatchOddsToQualify"
                                                         },
                                                         "title": {
                                                             "title": "Event page tabs grid Title",
-                                                            "type": "string"
+                                                            "type": "string",
+                                                            "default": "Grid name"
                                                         },
                                                         "blurb": {
                                                             "title": "Event page tabs grid blurb",
-                                                            "type": "string"
+                                                            "type": "string",
+                                                            "default": ""
                                                         },
                                                         "isExpanded": {
                                                             "title": "Event page tabs grid is expanded",
-                                                            "type": "boolean"
+                                                            "type": "boolean",
+                                                            "default": false
                                                         },
                                                         "visibleLinesNumber": {
                                                             "title": "Event page tabs grid Visible lines number",
-                                                            "type": "number"
+                                                            "type": "number",
+                                                            "default": 5
                                                         },
                                                         "template": {
                                                             "title": "Event page tabs grid Template",
                                                             "type": "string",
+                                                            "default": "MATCH_ODDS_TO_QUALIFY_HANDICAP",
                                                             "enum": [
                                                                 "simple",
                                                                 "ODDSBOOST",
@@ -167,10 +181,11 @@
                                                             ]
                                                         },
                                                         "tabs": {
-                                                            "title": "Event page tabs grid - tabs",
+                                                            "title": "Grid - tabs",
                                                             "type": "array",
                                                             "uniqueItems": true,
                                                             "items": {
+                                                                "title": "Grid tab element",
                                                                 "type": "object",
                                                                 "properties": {
                                                                     "title": {
