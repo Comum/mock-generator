@@ -14,11 +14,13 @@
                 "properties": {
                     "id": {
                         "title": "Competition id",
-                        "type": "number"
+                        "type": "number",
+                        "default": 1
                     },
                     "title": {
                         "title": "Competition title",
-                        "type": "string"
+                        "type": "string",
+                        "default": "Competition name"
                     },
                     "eventIds": {
                         "title": "Events",
@@ -31,23 +33,66 @@
                             "properties": {
                                 "id": {
                                     "title": "Event id",
-                                    "type": "number"
+                                    "type": "number",
+                                    "default": 1
                                 },
                                 "eventTypeId": {
                                     "title": "Event type id",
-                                    "type": "number"
+                                    "type": "number",
+                                    "default": 1,
+                                    "enum": [
+                                        1,
+                                        2,
+                                        3,
+                                        4,
+                                        5,
+                                        6,
+                                        7,
+                                        8,
+                                        10,
+                                        11,
+                                        1477,
+                                        3503,
+                                        3988,
+                                        4339,
+                                        6422,
+                                        6423,
+                                        7511,
+                                        7522,
+                                        7524,
+                                        61420,
+                                        136332,
+                                        451485,
+                                        468328,
+                                        627555,
+                                        998917,
+                                        998920,
+                                        2152880,
+                                        2378961,
+                                        2593174,
+                                        2872194,
+                                        4726642,
+                                        26420387,
+                                        27454571,
+                                        27388198,
+                                        27065662
+                                    ]
                                 },
                                 "title": {
                                     "title": "Event title",
-                                    "type": "string"
+                                    "type": "string",
+                                    "default": "Event title"
                                 },
                                 "videoAvailable": {
                                     "title": "Event video available",
-                                    "type": "boolean"
+                                    "type": "boolean",
+                                    "default": false
                                 },
                                 "openDate": {
                                     "title": "Event open date",
-                                    "type": "string"
+                                    "type": "string",
+                                    "description": "Please use format yyyy-mm-dd-hh:mm:ss",
+                                    "default": "1970-01-01-00:00:00"
                                 },
                                 "eventPageTabIds": {
                                     "title": "Event page tab ids",
