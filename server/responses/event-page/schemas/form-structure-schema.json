@@ -103,6 +103,16 @@
                                     "description": "Please use format yyyy-mm-dd-hh:mm:ss",
                                     "default": "1970-01-01-00:00:00"
                                 },
+                                "eventPageTabsIds": {
+                                    "title": "Event page tabs list",
+                                    "type": "array",
+                                    "uniqueItems": true,
+                                    "items": {
+                                        "title": "Event page tab id",
+                                        "type": "string",
+                                        "default": "SOCCER-position:0"
+                                    }
+                                },
                                 "eventPageTabs": {
                                     "title": "Event page tabs",
                                     "type": "array",
@@ -137,6 +147,16 @@
                                                 "title": "Is all markets tab",
                                                 "type": "boolean",
                                                 "default": false
+                                            },
+                                            "eventPageTabGridIds": {
+                                                "title": "Event page tab grids list",
+                                                "type": "array",
+                                                "uniqueItems": true,
+                                                "items": {
+                                                    "title": "Event page tab grid id",
+                                                    "type": "string",
+                                                    "default": "SOCCER-position:0-MG_Football_MatchOddsToQualify"
+                                                }
                                             },
                                             "eventPageTabGrids": {
                                                 "title": "Event page tab grids",
@@ -246,6 +266,16 @@
                                                                             }
                                                                         }
                                                                     },
+                                                                    "marketsIds": {
+                                                                        "title": "Market ids list",
+                                                                        "type": "array",
+                                                                        "uniqueItems": true,
+                                                                        "items": {
+                                                                            "title": "Market id",
+                                                                            "type": "string",
+                                                                            "default": "924.xxxxxxxxx"
+                                                                        }
+                                                                    },
                                                                     "markets": {
                                                                         "title": "Markets",
                                                                         "type": "array",
@@ -253,7 +283,6 @@
                                                                         "items": {
                                                                             "title": "Market element",
                                                                             "type": "object",
-                                                                            "required": ["id", "marketType", "name", "marketTime", "marketStatus"],
                                                                             "properties": {
                                                                                 "id": {
                                                                                     "title": "Market ID",
@@ -350,6 +379,16 @@
                                                                                     "title": "Market guaranteed price available",
                                                                                     "type": "boolean",
                                                                                     "default": false
+                                                                                },
+                                                                                "runnerIds": {
+                                                                                    "title": "Runner ids list",
+                                                                                    "type": "array",
+                                                                                    "uniqueItems": true,
+                                                                                    "items": {
+                                                                                        "title": "Runner id",
+                                                                                        "type": "string",
+                                                                                        "default": "924.xxxxxxxxx.1234"
+                                                                                    }
                                                                                 },
                                                                                 "runners": {
                                                                                     "title": "Runners",
