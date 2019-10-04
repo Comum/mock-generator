@@ -10,7 +10,6 @@
             "items": {
                 "title": "Competition details",
                 "type": "object",
-                "required": ["id", "title"],
                 "properties": {
                     "id": {
                         "title": "Competition id",
@@ -23,6 +22,16 @@
                         "default": "Competition name"
                     },
                     "eventIds": {
+                        "title": "Event ids list",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "title": "Event id",
+                            "type": "string",
+                            "default": "1"
+                        }
+                    },
+                    "events": {
                         "title": "Events",
                         "type": "array",
                         "uniqueItems": true,
