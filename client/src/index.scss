@@ -6,3 +6,10 @@ html, body {
   padding: 0 10px 20px;
 }
 
+/* OVERRIDES */ 
+
+.array-item {
+  .col-xs-9 {
+    min-width: 400px;
+  }
+}
