@@ -27,7 +27,7 @@ app.get("/supported-requests", (req, res) => {
     res.send(tree);
 });
 
-app.get("/schemas-json/:folder?/:file?", function(req, res) {
+app.get("/schemas-json/:folder?/:file?", (req, res) => {
     if (req.params.folder && req.params.file) {
         let response = {};
 
@@ -44,6 +44,21 @@ app.get("/schemas-json/:folder?/:file?", function(req, res) {
     } else {
         res.send({
             err: "Please provide a valid url: /schemas-json/:folder/:file"
+        });
+    }
+});
+
+app.post("/mock-generator/:type", (req, res) => {
+    if (!req.params.type) {
+        res.send({
+            err: "Please provide mock type"
+        });
+    } else {
+        // switch () {
+    
+        // }
+        res.send({
+            sucess: "Generating mock of type " + req.params.type
         });
     }
 });

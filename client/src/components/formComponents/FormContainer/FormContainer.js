@@ -1,5 +1,8 @@
 import React from "react";
 import Form from "react-jsonschema-form";
+import axios from "axios";
+
+import { MOCK_GENERATOR_PATH } from "../../../constants/constants";
 
 // types
 // - object
@@ -12,8 +15,22 @@ import Form from "react-jsonschema-form";
 //     console.log(mock);
 // }
 
-function onSubmit({ formData }, e) {
+async function onSubmit({ formData }, e) {
     console.log("Data submitted: ", formData);
+
+    try {
+        const result = await axios({
+            method: "post",
+            url: `${MOCK_GENERATOR_PATH}`,
+            data: {
+                hello: "world"
+            }
+        });
+
+        console.log("result", result);
+    } catch (e) {
+        console.error("Failed mock generation request");
+    }
 }
 
 function FormContainer(props) {
