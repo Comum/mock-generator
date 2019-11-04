@@ -21,7 +21,7 @@ async function onSubmit({ formData }, e) {
     try {
         const result = await axios({
             method: "post",
-            url: `${MOCK_GENERATOR_PATH}`,
+            url: `${MOCK_GENERATOR_PATH}event`,
             data: {
                 hello: "world"
             }
