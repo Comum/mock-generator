@@ -19,15 +19,9 @@ async function onSubmit({ formData }, e) {
     console.log("Data submitted: ", formData);
 
     try {
-        const result = await axios({
-            method: "post",
-            url: `${MOCK_GENERATOR_PATH}event`,
-            data: {
-                hello: "world"
-            }
-        });
-
-        console.log("result", result);
+        const res = await axios.post(`${MOCK_GENERATOR_PATH}event`, formData);
+        console.log("res", res);
+        
     } catch (e) {
         console.error("Failed mock generation request");
     }
