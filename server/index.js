@@ -4,6 +4,10 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const dirTree = require("directory-tree");
+
+const eventPage = require("./lib/event-page-generator");
+const constants = require("./constants/constants");
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -12,15 +16,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cors());
-
-// CHANGE/REMOVE THIS ROUTE
-app.get("/", (req, res) => {
-    const testResponse = {
-        route: "root"
-    };
-
-    res.send(testResponse);
-});
 
 app.get("/supported-requests", (req, res) => {
     const tree = dirTree(path.join(__dirname + "/responses/"));
@@ -50,17 +45,25 @@ app.get("/schemas-json/:folder?/:file?", (req, res) => {
 });
 
 app.post("/mock-generator/:type", (req, res) => {
-    if (!req.params.type) {
+    const type = req.params.type;
+
+    if (!type) {
         res.send({
             err: "Please provide mock type"
         });
     } else {
-        // switch () {
-    
-        // }
-        res.send({
-            sucess: "Generating mock of type " + req.params.type
-        });
+        let response;
+
+        switch (type) {
+            case constants.MOCK_EVENT_PAGE: response = eventPage.generateEventPageMock(req.body);
+                break;
+            default:
+                response = {
+                    error: "Mock " + type + " not supported"
+                };
+        }
+
+        res.send(response);
     }
 });
 

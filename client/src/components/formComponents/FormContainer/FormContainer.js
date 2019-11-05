@@ -2,7 +2,7 @@ import React from "react";
 import Form from "react-jsonschema-form";
 import axios from "axios";
 
-import { MOCK_GENERATOR_PATH } from "../../../constants/constants";
+import { MOCK_GENERATOR_PATH, MOCK_EVENT_PAGE } from "../../../constants/constants";
 
 // types
 // - object
@@ -19,7 +19,7 @@ async function onSubmit({ formData }, e) {
     console.log("Data submitted: ", formData);
 
     try {
-        const res = await axios.post(`${MOCK_GENERATOR_PATH}event`, formData);
+        const res = await axios.post(`${MOCK_GENERATOR_PATH}${MOCK_EVENT_PAGE}`, formData);
         console.log("res", res);
         
     } catch (e) {
