@@ -1,0 +1,129 @@
+{
+    "competitions": {
+        "byId": { "1": { "id": 1, "title": "UEFA Champions League", "eventIds": [100] } },
+        "allIds": ["1"]
+    },
+    "events": {
+        "byId": {
+            "100": {
+                "id": 100,
+                "eventTypeId": 1,
+                "title": "Betfait v Paddypower",
+                "videoAvailable": false,
+                "openDate": "1970-01-01T00:00:01.000Z",
+                "eventPageTabIds": [
+                    "SOCCER-position:0"
+                ]
+            }
+        },
+        "allIds": ["100"]
+    },
+    "eventPageTabs": {
+        "byId": {
+            "SOCCER-position:0": {
+                "id": "SOCCER-position:0",
+                "badge": null,
+                "title": "Popular",
+                "isDefaultTab": true,
+                "isAllMarketsTab": false,
+                "eventPageTabGridIds": [
+                    "SOCCER-position:0-MG_Football_MatchOddsToQualify"
+                ]
+            }
+        },
+        "allIds": [
+            "SOCCER-position:0"
+        ]
+    },
+    "eventPageTabsGrids": {
+        "byId": {
+            "SOCCER-position:0-MG_Football_MatchOddsToQualify": {
+                "id": "SOCCER-position:0-MG_Football_MatchOddsToQualify",
+                "title": "Match Result Markets",
+                "blurb": null,
+                "isExpanded": true,
+                "visibleLinesNumber": 1,
+                "template": "MATCH_ODDS_TO_QUALIFY_HANDICAP",
+                "tabs": [
+                    {
+                        "id": "SOCCER-position:0-MG_Football_MatchOddsToQualify:0",
+                        "title": null,
+                        "blurb": null,
+                        "handicapTypeLabel": null,
+                        "headerLabels": [],
+                        "marketTypeConfigs": [
+                            { "marketType": "MATCH_ODDS", "blurb": null },
+                            { "marketType": "TO_QUALIFY", "blurb": null },
+                            { "marketType": "TO_LIFT_THE_TROPHY", "blurb": null },
+                            { "marketType": "TO_FINISH_THIRD", "blurb": null },
+                            { "marketType": "PROMOTION", "blurb": null },
+                            { "marketType": "EXTRA_TIME_RESULT", "blurb": null }
+                        ],
+                        "marketIds": ["924.210564027"]
+                    }
+                ],
+                "selectedTabId": "SOCCER-position:0-MG_Football_MatchOddsToQualify:0"
+            }
+        },
+        "allIds": [
+            "SOCCER-position:0-MG_Football_MatchOddsToQualify"
+        ]
+    },
+    "markets": {
+        "byId": {
+            "924.210564027": {
+                "hasCashout": true,
+                "hasEWCashout": false,
+                "id": "924.210564027",
+                "marketType": "MATCH_ODDS",
+                "canTurnInplay": true,
+                "name": "Match Odds",
+                "inplay": false,
+                "sgmMarket": true,
+                "bspMarket": false,
+                "marketTime": "2019-11-05T17:55:00.000Z",
+                "bettingType": "ODDS",
+                "marketStatus": "OPEN",
+                "marketLevels": ["AVB_EVENT"],
+                "sortPriority": -3500,
+                "runnerIds": ["924.210564027-197960", "924.210564027-58805", "924.210564027-5340398"]
+            }
+        },
+        "allIds": [
+            "924.210564027"
+        ]
+    },
+    "runners": {
+        "byId": {
+            "924.210564027-197960": {
+                "id": "924.210564027-197960",
+                "selectionId": 197960,
+                "handicap": 0,
+                "name": "Zenit St Petersburg",
+                "sortPriority": 1,
+                "result": { "type": "HOME" }
+            },
+            "924.210564027-58805": {
+                "id": "924.210564027-58805",
+                "selectionId": 58805,
+                "handicap": 0,
+                "name": "The Draw",
+                "sortPriority": 2,
+                "result": { "type": "DRAW" }
+            },
+            "924.210564027-5340398": {
+                "id": "924.210564027-5340398",
+                "selectionId": 5340398,
+                "handicap": 0,
+                "name": "RB Leipzig",
+                "sortPriority": 3,
+                "result": { "type": "AWAY" }
+            }
+        },
+        "allIds": [
+            "924.210564027-197960",
+            "924.210564027-58805",
+            "924.210564027-5340398"
+        ]
+    }
+}
