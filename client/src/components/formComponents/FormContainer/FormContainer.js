@@ -1,8 +1,8 @@
-import React from "react";
-import Form from "react-jsonschema-form";
-import axios from "axios";
+import React from 'react';
+import Form from 'react-jsonschema-form';
+import axios from 'axios';
 
-import { MOCK_GENERATOR_PATH, MOCK_EVENT_PAGE } from "../../../constants/constants";
+import { MOCK_GENERATOR_PATH, MOCK_EVENT_PAGE } from '../../../constants/constants';
 
 // types
 // - object
@@ -16,31 +16,30 @@ import { MOCK_GENERATOR_PATH, MOCK_EVENT_PAGE } from "../../../constants/constan
 // }
 
 async function onSubmit({ formData }, e) {
-    console.log("Data submitted: ", formData);
+	console.log('Data submitted: ', formData);
 
-    try {
-        const res = await axios.post(`${MOCK_GENERATOR_PATH}${MOCK_EVENT_PAGE}`, formData);
-        console.log("res", res);
-        
-    } catch (e) {
-        console.error("Failed mock generation request");
-    }
+	try {
+		const res = await axios.post(`${MOCK_GENERATOR_PATH}${MOCK_EVENT_PAGE}`, formData);
+		console.log('res', res);
+	} catch (e) {
+		console.error('Failed mock generation request');
+	}
 }
 
 function FormContainer(props) {
-    const { mock } = props;
-    let form = <div></div>;
+	const { mock } = props;
+	let form = <div></div>;
 
-    if (Object.keys(mock).length !== 0) {
-        form = <Form schema={mock} onSubmit={onSubmit} />;
-    }
+	if (Object.keys(mock).length !== 0) {
+		form = <Form schema={mock} onSubmit={onSubmit} />;
+	}
 
-    return (
-        <div>
-            <div>I am the form</div>
-            {form}
-        </div>
-    );
+	return (
+		<div>
+			<div>I am the form</div>
+			{form}
+		</div>
+	);
 }
 
 export default FormContainer;
