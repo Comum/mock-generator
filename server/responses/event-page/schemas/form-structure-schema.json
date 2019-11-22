@@ -44,7 +44,7 @@
                                 "id": {
                                     "title": "Event id",
                                     "type": "number",
-                                    "default": 1
+                                    "default": 10
                                 },
                                 "eventTypeId": {
                                     "title": "Event type id",

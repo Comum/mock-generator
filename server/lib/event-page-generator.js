@@ -12,31 +12,53 @@ function getAllIds(array) {
 }
 
 function handleCompetitions(competitions) {
-	const res = {
-		byId: {},
-		allIds: [],
-	};
+	const response = {
+        competitions: {
+            byId: {},
+            allIds: []
+        },
+        events: {
+            byId: {},
+            allIds: []
+        },
+    };
 
 	competitions.forEach(competition => {
 		const id = competition.id;
-		const eventsList = getAllIds(competition.events);
+        const eventsList = getAllIds(competition.events);
+        let eventPageTabsList;
 
-		res.byId[id] = {
+        if (eventsList.length > 0) {
+            competition.events.forEach(event => {
+                eventPageTabsList = getAllIds(event.eventPageTabs);
+
+                response.events.byId[event.id] = {
+                    id: event.id,
+                    eventTypeId: event.eventTypeId,
+                    title: event.title,
+                    videoAvailable: event.videoAvailable,
+                    openDate: event.openDate,
+                    eventPageTabs: eventPageTabsList,
+                };
+            });
+        }
+
+		response.competitions.byId[id] = {
 			id,
 			title: competition.title,
 			eventIds: eventsList,
 		};
-		res.allIds.push(id);
-	});
+		response.competitions.allIds.push(id);
+    });
 
-	return res;
+	return response;
 }
 
 function handleEventPageMock(data) {
-	const competitions = handleCompetitions(data.competitions);
+	const response = handleCompetitions(data.competitions);
 
 	return {
-		competitions,
+		response,
 	};
 }
 
